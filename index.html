@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ka" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="მარიამის პერსონალური პორტფოლიო - Junior Front-end დეველოპერი. გაეცანით ჩემს პროექტებს, გამოცდილებას და საკონტაქტო ინფორმაციას.">
+  <title>მარიამი | Front-end Developer - მთავარი</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans Georgian -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Lordicon Animated SVG Icons Web Player -->
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Noto Sans Georgian"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    mark {
+      background-color: #eef2ff;
+      color: #4338ca;
+      padding: 0.2rem 0.65rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.85em;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      display: inline-flex;
+      align-items: center;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+    }
+  </style>
+</head>
+
+<body id="top" class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- საიტის ზედა ნაწილი (ჰედერი) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+      <div>
+        <h1 class="text-base sm:text-lg md:text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+          <span>მარიამი | Front-end Developer</span>
+        </h1>
+        <p class="text-[11px] sm:text-xs text-slate-500 mt-0.5 line-clamp-1"><em>კეთილი იყოს თქვენი მობრძანება ჩემს პერსონალურ პორტფოლიო ვებსაიტზე!</em></p>
+      </div>
+
+      <!-- დესკტოპის მთავარი ნავიგაცია (იმალება მობილურზე) -->
+      <nav aria-label="მთავარი ნავიგაცია (დესკტოპი)" class="hidden md:block">
+        <ul class="flex items-center flex-wrap justify-end gap-1.5 sm:gap-2 text-sm">
+          <li>
+            <strong class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-indigo-50 text-indigo-700 font-semibold ring-1 ring-inset ring-indigo-500/20 shadow-xs">
+              მთავარი (მიმდინარე)
+            </strong>
+          </li>
+          <li>
+            <a href="about.html" class="inline-flex items-center px-3.5 py-1.5 rounded-full text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors duration-150 font-medium">
+              ჩემს შესახებ
+            </a>
+          </li>
+          <li>
+            <a href="projects.html" class="inline-flex items-center px-3.5 py-1.5 rounded-full text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors duration-150 font-medium">
+              პროექტები
+            </a>
+          </li>
+          <li>
+            <a href="employees.html" class="inline-flex items-center px-3.5 py-1.5 rounded-full text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors duration-150 font-medium">
+              Employees
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="inline-flex items-center px-3.5 py-1.5 rounded-full text-slate-600 hover:text-indigo-600 hover:bg-slate-100 transition-colors duration-150 font-medium">
+              საკონტაქტო
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ჰამბურგერ მენიუს ღილაკი (ჩანს მხოლოდ მცირე ეკრანებზე) -->
+      <button type="button" id="mobile-menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="ნავიგაციის მენიუს გახსნა/დახურვა"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors cursor-pointer">
+        <!-- Font Awesome bars ხატულა (3 ჰორიზონტალური ხაზი) -->
+        <i id="hamburger-icon" class="fa-solid fa-bars text-xl transition-transform duration-200" aria-hidden="true"></i>
+        <!-- Font Awesome დახურვის (X) ხატულა -->
+        <i id="close-icon" class="fa-solid fa-xmark text-2xl hidden transition-transform duration-200" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- მობილური ნავიგაციის მენიუ (ჩამოიშლება ჰამბურგერზე დაჭერისას) -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-md px-4 py-3 shadow-lg transition-all duration-200">
+      <nav aria-label="მობილური ნავიგაცია">
+        <ul class="flex flex-col space-y-1.5 text-base">
+          <li>
+            <strong class="flex items-center px-4 py-2.5 rounded-xl bg-indigo-50 text-indigo-700 font-semibold ring-1 ring-inset ring-indigo-500/20">
+              <i class="fa-solid fa-house mr-3 text-indigo-600 text-sm"></i>
+              <span>მთავარი (მიმდინარე)</span>
+            </strong>
+          </li>
+          <li>
+            <a href="about.html" class="flex items-center px-4 py-2.5 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors font-medium">
+              <i class="fa-solid fa-user mr-3 text-slate-500 text-sm"></i>
+              <span>ჩემს შესახებ</span>
+            </a>
+          </li>
+          <li>
+            <a href="projects.html" class="flex items-center px-4 py-2.5 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors font-medium">
+              <i class="fa-solid fa-briefcase mr-3 text-slate-500 text-sm"></i>
+              <span>პროექტები</span>
+            </a>
+          </li>
+          <li>
+            <a href="employees.html" class="flex items-center px-4 py-2.5 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors font-medium">
+              <i class="fa-solid fa-users mr-3 text-slate-500 text-sm"></i>
+              <span>Employees</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="flex items-center px-4 py-2.5 rounded-xl text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors font-medium">
+              <i class="fa-solid fa-envelope mr-3 text-slate-500 text-sm"></i>
+              <span>საკონტაქტო</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <hr class="border-t border-slate-200/60 my-0">
+
+  <!-- გვერდის ძირითადი შინაარსი -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16 flex-grow w-full">
+
+    <!-- მისალმების სექცია -->
+    <section id="hero" class="relative bg-gradient-to-br from-indigo-50/70 via-white to-slate-50 border border-slate-200/80 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm overflow-hidden">
+      <!-- Decorative background glow -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Hero Information -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-100/80 text-indigo-800 text-xs font-semibold">
+            <i class="fa-solid fa-wand-magic-sparkles text-amber-500 text-xs" aria-hidden="true"></i>
+            <span>ხელმისაწვდომია სტაჟირებისა და ჯუნიორ პოზიციებისთვის</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            გამარჯობა, მე ვარ მარიამი <i class="fa-solid fa-hand text-amber-400 hover:rotate-12 transition-transform inline-block" aria-hidden="true"></i>
+          </h2>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            ვარ დამწყები <strong class="text-indigo-600 font-semibold">Front-end დეველოპერი</strong>, რომელიც გატაცებულია სუფთა, სემანტიკური და
+            მომხმარებელზე ორიენტირებული ვებ-ინტერფეისების აგებით.
+          </p>
+
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            ჩემი მიზანია შევქმნა ისეთი ვებ-გვერდები, რომლებიც გამოირჩევა მაღალი ხელმისაწვდომობით (Accessibility),
+            სწრაფი ჩატვირთვის დროითა და თანამედროვე ვებ-სტანდარტების ზედმიწევნით დაცვით.
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <a href="projects.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md hover:shadow-indigo-500/20 hover:-translate-y-0.5 transition duration-150 text-center">
+              <span>პროექტების ნახვა</span>
+              <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+            <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm border border-slate-300 shadow-xs hover:border-slate-400 transition duration-150 text-center">
+              <i class="fa-solid fa-paper-plane text-indigo-600" aria-hidden="true"></i>
+              <span>დამიკავშირდით</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Photo -->
+        <div class="lg:col-span-5 flex justify-center">
+          <figure class="relative group max-w-full">
+            <div class="absolute -inset-2 bg-gradient-to-tr from-indigo-500 to-violet-500 rounded-3xl opacity-20 group-hover:opacity-30 blur-lg transition duration-300"></div>
+            <img src="images/profile.jpg" alt="მარიამის პორტრეტი სამუშაო გარემოში" width="300" height="300"
+              class="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover object-top rounded-2xl shadow-xl ring-4 ring-white transition duration-300 group-hover:scale-[1.02] max-w-full">
+            <figcaption class="mt-3 text-center text-xs text-slate-500 font-medium">
+              <em>Junior Front-end დეველოპერი სამუშაო მაგიდასთან</em>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-t border-slate-200/60">
+
+    <!-- მოკლე მიმოხილვა ჩემს შესახებ -->
+    <section id="about-preview" class="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-sm transition-all duration-200">
+      <div class="max-w-3xl space-y-4">
+        <div class="inline-flex items-center gap-2 text-indigo-600 font-bold text-xs uppercase tracking-wider">
+          <lord-icon src="https://cdn.lordicon.com/puvaffet.json" trigger="hover" colors="primary:#4f46e5,secondary:#f59e0b" style="width:24px;height:24px" class="inline-block align-middle">
+            <i class="fa-solid fa-lightbulb text-amber-500 text-sm" aria-hidden="true"></i>
+          </lord-icon>
+          <span>გაცნობა</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">მოკლედ ჩემს შესახებ</h2>
+        <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+          ამჟამად აქტიურად ვეუფლები თანამედროვე ვებ-ტექნოლოგიებს. ჩემი სასწავლო გზა მოიცავს სემანტიკურ HTML5-ს,
+          თანამედროვე CSS-ს და JavaScript-ის ფუნდამენტებს.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          დეტალური ინფორმაცია ჩემი განათლების, უნარების, ტექნოლოგიური სტეკისა და სერტიფიკატების შესახებ იხილეთ:
+          <br>
+          <span class="inline-block mt-3">
+            <a href="about.html" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold bg-indigo-50 hover:bg-indigo-100 px-3.5 py-1.5 rounded-lg border border-indigo-200/60 transition-colors">
+              <i class="fa-solid fa-circle-user text-indigo-600" aria-hidden="true"></i>
+              <strong>სრულად ჩემს შესახებ</strong>
+              <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <hr class="border-t border-slate-200/60">
+
+    <!-- რჩეული პროექტების სექცია -->
+    <section id="featured-projects" class="space-y-6">
+      <div>
+        <div class="inline-flex items-center gap-2 text-indigo-600 font-bold text-xs uppercase tracking-wider">
+          <lord-icon src="https://cdn.lordicon.com/system-outline-187-briefcase.json" trigger="hover" colors="primary:#4f46e5,secondary:#818cf8" style="width:24px;height:24px" class="inline-block align-middle">
+            <i class="fa-solid fa-briefcase text-indigo-600 text-sm" aria-hidden="true"></i>
+          </lord-icon>
+          <span>პორტფოლიო</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">რჩეული პროექტები</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-1">გთავაზობთ რამდენიმე პროექტს, რომლებზეც ბოლო პერიოდში ვიმუშავე:</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <!-- პროექტი 1 -->
+        <article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <figure class="relative overflow-hidden aspect-video bg-slate-100 border-b border-slate-100">
+            <img src="images/project1.jpg" alt="ონლაინ მაღაზიის ინტერფეისი" width="480"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <figcaption class="sr-only"><em>პროდუქციის კატალოგისა და კალათის ინტერფეისი</em></figcaption>
+          </figure>
+
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <header>
+              <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                1. ონლაინ მაღაზიის პლატფორმა (E-Commerce Store)
+              </h3>
+            </header>
+
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              თანამედროვე ელექტრონული კომერციის ვებ-გვერდის მაკეტი, რომელიც მოიცავს პროდუქტების კატალოგს,
+              ფასების ცხრილს, დეტალურ ბარათებსა და ინტერაქტიულ კალათას.
+            </p>
+
+            <div class="pt-2 border-t border-slate-100">
+              <p class="text-xs text-slate-500 font-semibold mb-2">
+                <strong>ტექნოლოგიები:</strong>
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <mark><i class="fa-brands fa-html5 text-orange-600 mr-1" aria-hidden="true"></i> HTML5</mark>
+                <mark><i class="fa-brands fa-css3-alt text-blue-600 mr-1" aria-hidden="true"></i> CSS3</mark>
+                <mark><i class="fa-brands fa-js text-amber-500 mr-1" aria-hidden="true"></i> JavaScript</mark>
+              </div>
+            </div>
+
+            <p class="pt-2">
+              <a href="projects.html#ecommerce" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 group-hover:translate-x-1 transition-all duration-200">
+                <span>იხილეთ პროექტის სრული დეტალები</span>
+                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <!-- პროექტი 2 -->
+        <article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <figure class="relative overflow-hidden aspect-video bg-slate-100 border-b border-slate-100">
+            <img src="images/project2.jpg" alt="დავალებების მართვის სისტემის სამუშაო დაფა" width="480"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <figcaption class="sr-only"><em>ამოცანების მართვის ინტერფეისი Kanban სტილში</em></figcaption>
+          </figure>
+
+          <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+            <header>
+              <h3 class="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                2. დავალებების მართვის აპლიკაცია (TaskFlow Dashboard)
+              </h3>
+            </header>
+
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              პროდუქტიულობის ვებ-აპლიკაცია გუნდური და ინდივიდუალური ამოცანების სამართავად.
+              მომხმარებელს შეუძლია დავალებების დამატება, სტატუსების ცვლილება და პრიორიტეტების განსაზღვრა.
+            </p>
+
+            <div class="pt-2 border-t border-slate-100">
+              <p class="text-xs text-slate-500 font-semibold mb-2">
+                <strong>ტექნოლოგიები:</strong>
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                <mark><i class="fa-brands fa-html5 text-orange-600 mr-1" aria-hidden="true"></i> HTML5 Semantic</mark>
+                <mark><i class="fa-brands fa-js text-amber-500 mr-1" aria-hidden="true"></i> JavaScript DOM</mark>
+                <mark><i class="fa-solid fa-database text-indigo-600 mr-1" aria-hidden="true"></i> LocalStorage</mark>
+              </div>
+            </div>
+
+            <p class="pt-2">
+              <a href="projects.html#taskflow" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-800 group-hover:translate-x-1 transition-all duration-200">
+                <span>იხილეთ პროექტის სრული დეტალები</span>
+                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="pt-4 text-center sm:text-left">
+        <p>
+          <a href="projects.html" class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm shadow-sm hover:shadow transition duration-150">
+            <i class="fa-solid fa-layer-group text-indigo-400" aria-hidden="true"></i>
+            <strong>იხილეთ ყველა პროექტი და ტექნოლოგიური შედარება</strong>
+            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <hr class="border-t border-slate-200/60">
+
+    <!-- გვერდითი ბლოკი / დამატებითი ინფორმაცია -->
+    <aside id="highlights" class="bg-gradient-to-br from-slate-900 via-slate-850 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-md">
+      <div class="mb-6 flex items-center justify-between flex-wrap gap-2">
+        <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-thumbtack text-indigo-400" aria-hidden="true"></i>
+          <span>მოკლე ფაქტები ჩემს შესახებ</span>
+        </h3>
+        <span class="text-xs uppercase tracking-wider font-semibold text-indigo-300 bg-white/10 px-3 py-1 rounded-full border border-white/10">Quick Facts</span>
+      </div>
+
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li class="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+          <div class="text-xs text-indigo-300 font-medium mb-1">სპეციალიზაცია</div>
+          <div class="text-slate-100 font-semibold text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-laptop-code text-indigo-400" aria-hidden="true"></i>
+            <span>Front-end Development</span>
+          </div>
+        </li>
+        <li class="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+          <div class="text-xs text-indigo-300 font-medium mb-1">სწავლების პროცესი</div>
+          <div class="text-slate-100 font-semibold text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-graduation-cap text-indigo-400" aria-hidden="true"></i>
+            <span>TBC IT Academy / Tech Academy კურსის მონაწილე</span>
+          </div>
+        </li>
+        <li class="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+          <div class="text-xs text-indigo-300 font-medium mb-1">მიმდინარე მიზანი</div>
+          <div class="text-slate-100 font-semibold text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-bullseye text-indigo-400" aria-hidden="true"></i>
+            <span>სემანტიკური HTML-ის, CSS Flexbox/Grid-ისა და JS-ის სრულყოფილად დაუფლება</span>
+          </div>
+        </li>
+        <li class="bg-white/5 backdrop-blur-xs p-4 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+          <div class="text-xs text-indigo-300 font-medium mb-1">სამუშაო ეთიკა</div>
+          <div class="text-slate-100 font-semibold text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-seedling text-emerald-400" aria-hidden="true"></i>
+            <span>პუნქტუალურობა, დეტალებზე ორიენტირებულობა და გუნდური მუშაობის უნარი</span>
+          </div>
+        </li>
+      </ul>
+    </aside>
+
+    <hr class="border-t border-slate-200/60">
+
+    <!-- მოქმედებისკენ მოწოდება (Call to Action) -->
+    <section id="cta" class="relative bg-gradient-to-r from-indigo-600 to-indigo-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-lg overflow-hidden">
+      <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="relative max-w-2xl mx-auto space-y-4">
+        <div class="flex justify-center mb-1">
+          <lord-icon src="https://cdn.lordicon.com/rmkpgtpt.json" trigger="hover" colors="primary:#ffffff,secondary:#c7d2fe" style="width:52px;height:52px">
+            <i class="fa-solid fa-rocket text-3xl text-indigo-200" aria-hidden="true"></i>
+          </lord-icon>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">გსურთ თანამშრომლობა?</h2>
+        <p class="text-indigo-100 text-sm sm:text-base leading-relaxed">
+          ღია ვარ სტაჟირების, ჯუნიორ პოზიციებისა და საინტერესო პროექტებში მონაწილეობის შემოთავაზებებისთვის.
+        </p>
+        <div class="pt-4">
+          <p>
+            <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-sm sm:text-base shadow-md hover:shadow-lg hover:-translate-y-0.5 transition duration-150 text-center">
+              <i class="fa-solid fa-envelope text-indigo-600" aria-hidden="true"></i>
+              <strong>გადმოდით საკონტაქტო გვერდზე და გამომიგზავნეთ შეტყობინება</strong>
+              <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <hr class="border-t border-slate-200/60 mt-12 mb-0">
+
+  <!-- საიტის ქვედა ნაწილი (ფუტერი) -->
+  <footer class="bg-white border-t border-slate-200/80 py-8 px-4 text-center text-sm text-slate-500">
+    <div class="max-w-6xl mx-auto space-y-4">
+      <p class="font-medium text-slate-700">&copy; <time datetime="2026">2026</time> მარიამი. ყველა უფლება დაცულია.</p>
+
+      <!-- საკონტაქტო მისამართი -->
+      <address class="not-italic text-xs sm:text-sm text-slate-600">
+        <p class="flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5">
+          <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-envelope text-indigo-600" aria-hidden="true"></i><strong>ელ-ფოსტა:</strong> <a href="mailto:mariko.dev@example.com" class="text-indigo-600 hover:underline">mariko.dev@example.com</a></span>
+          <span class="hidden sm:inline text-slate-300">|</span>
+          <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-phone text-indigo-600" aria-hidden="true"></i><strong>ტელეფონი:</strong> <a href="tel:+995555123456" class="text-indigo-600 hover:underline">+995 555 12 34 56</a></span>
+          <span class="hidden sm:inline text-slate-300">|</span>
+          <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-indigo-600" aria-hidden="true"></i><strong>ადგილმდებარეობა:</strong> თბილისი, საქართველო</span>
+        </p>
+      </address>
+
+      <!-- სოციალური და გარე ბმულები -->
+      <p class="flex flex-wrap justify-center items-center gap-2 sm:gap-4 text-xs sm:text-sm pt-2">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-indigo-600 transition-colors font-medium">
+          <i class="fa-brands fa-github text-base" aria-hidden="true"></i>
+          <span>GitHub</span>
+        </a>
+        <span class="text-slate-300">|</span>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-indigo-600 transition-colors font-medium">
+          <i class="fa-brands fa-linkedin text-base text-[#0a66c2]" aria-hidden="true"></i>
+          <span>LinkedIn</span>
+        </a>
+        <span class="text-slate-300">|</span>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 hover:text-indigo-600 transition-colors font-medium">
+          <i class="fa-brands fa-facebook text-base text-[#1877f2]" aria-hidden="true"></i>
+          <span>Facebook</span>
+        </a>
+        <span class="text-slate-300">|</span>
+        <a href="#top" class="inline-flex items-center gap-1 text-indigo-600 hover:text-indigo-800 transition-colors font-medium">
+          <i class="fa-solid fa-arrow-up text-xs" aria-hidden="true"></i>
+          <span>გვერდის დასაწყისში ასვლა</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- მობილური მენიუს სკრიპტი (Mobile Navigation) -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
